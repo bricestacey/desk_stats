@@ -52,7 +52,7 @@ Feature: Manage Locations
     And  the "Name" field should contain "Reference Desk"
     When I fill in "Name" with "Reference Desk, 4th Floor"
     And  I press "Update Location"
-    Then I should see "The location has successfully been updated."
+    Then I should see "The location was successfully updated."
 
   Scenario: Editing a location to not have a name
     When I follow "Reference Desk"

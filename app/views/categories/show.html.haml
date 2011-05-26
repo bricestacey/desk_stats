@@ -1,0 +1,15 @@
+- @title = @category.name
+- @action_items = {'Edit Category' => edit_category_path(@category), 'Delete Category' => category_path(@category, :method => :delete, :confirm => 'Are you sure you want to delete this category?')}
+- @breadcrumbs = {'Home' => root_path, 'Categories' => categories_path}
+
+%table
+  %tbody
+    %tr
+      %th Name
+      %td= @category.name
+    %tr
+      %th Created At
+      %td= @category.created_at.to_formatted_s(:long)
+    %tr
+      %th Updated At
+      %td= @category.updated_at.to_formatted_s(:long)

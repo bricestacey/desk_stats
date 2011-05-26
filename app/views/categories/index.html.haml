@@ -1,0 +1,16 @@
+- @title = 'Categories'
+- @action_items = {'Add Category' => new_category_path}
+- @breadcrumbs = {'Home' => root_path}
+
+%table
+  %thead
+    %tr
+      %th Name
+      %th Created At
+      %th Updated At
+  %tbody
+    - @categories.each do |category|
+      %tr
+        %td= link_to category.name, category_path(category)
+        %td= category.created_at.to_formatted_s(:long)
+        %td= category.updated_at.to_formatted_s(:long)

@@ -1,0 +1,5 @@
+= semantic_form_for @category do |f|
+  = f.inputs 'Category Information' do
+    = f.input :name
+    = f.buttons do
+      = f.commit_button :label => (@category.new_record?) ? 'Add Category' : 'Update Category'

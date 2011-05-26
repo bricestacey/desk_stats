@@ -30,7 +30,7 @@ class LocationsController < ApplicationController
     @location.attributes = params[:location]
 
     if @location.save
-      redirect_to @location, :notice => 'The location has successfully been updated.'
+      redirect_to @location, :notice => 'The location was successfully updated.'
     else
       flash.now[:error] = 'There was a problem updating the location.'
       render :edit
