@@ -22,7 +22,7 @@ module ApplicationHelper
 
   def breadcrumbs
     if @breadcrumbs
-      raw(@breadcrumbs.map {|k,v| link_to k, v}.join(content_tag(:span, BREADCRUMB_SEPERATOR, :class => 'breadcrumb_seperator')))
+      raw(@breadcrumbs.map {|k,v| link_to k, v}.join(content_tag(:span, BREADCRUMB_SEPERATOR, :class => 'breadcrumbs-seperator')))
     end
   end
 end
