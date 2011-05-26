@@ -12,9 +12,9 @@ module ApplicationHelper
     if @action_items
       raw(@action_items.map do |k,v|
         if k.include? 'Delete'
-          link_to k, v, :method => :delete, :confirm => 'Are you sure you want to delete this? The action cannot be undone.'
+          link_to k, v, :method => :delete, :confirm => 'Are you sure you want to delete this? The action cannot be undone.', :class => 'button'
         else
-          link_to k, v
+          link_to k, v, :class => 'button'
         end
       end.join(''))
     end
