@@ -1,0 +1,5 @@
+= semantic_form_for @location do |f|
+  = f.inputs 'Location Information' do
+    = f.input :name
+    = f.buttons do
+      = f.commit_button :label => (@location.new_record?) ? 'Add Location' : 'Update Location'
