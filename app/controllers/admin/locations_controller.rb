@@ -1,4 +1,4 @@
-class LocationsController < ApplicationController
+class Admin::LocationsController < ApplicationController
   respond_to :html
 
   def index
@@ -30,7 +30,7 @@ class LocationsController < ApplicationController
     @location.attributes = params[:location]
 
     if @location.save
-      redirect_to @location, :notice => 'The location was successfully updated.'
+      redirect_to admin_location_path(@location), :notice => 'The location was successfully updated.'
     else
       flash.now[:error] = 'There was a problem updating the location.'
       render :edit
@@ -41,7 +41,7 @@ class LocationsController < ApplicationController
     @location = Location.new(params[:location])
 
     if @location.save
-      redirect_to @location, :notice => 'The location was successfully added.'
+      redirect_to admin_location_path(@location), :notice => 'The location was successfully added.'
     else
       flash.now[:error] = 'There was a problem adding the location.'
       render :new
@@ -52,10 +52,10 @@ class LocationsController < ApplicationController
     @location = Location.find(params[:id])
 
     if @location.delete
-      redirect_to locations_path, :notice => 'The location was successfully deleted.'
+      redirect_to admin_locations_path, :notice => 'The location was successfully deleted.'
     else
       flash[:error] = 'There was a problem deleting the location.'
-      redirect_to locations_path
+      redirect_to admin_locations_path
     end
   end
 end

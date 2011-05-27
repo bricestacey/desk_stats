@@ -1,0 +1,5 @@
+- @title = 'Edit Category'
+- @action_items = {'Cancel' => admin_category_path(@category)}
+- @breadcrumbs = {'Home' => root_path, 'Categories' => admin_categories_path, @category.name => admin_category_path(@category)}
+
+= render :partial => 'form', :object => @category

@@ -7,7 +7,7 @@ Feature: Manage Locations
       | Name             |
       | Reference Desk   |
       | Circulation Desk |
-    And   I am on the home page
+    And   I am on the admin page
     And   I follow "Locations"
 
   # Index

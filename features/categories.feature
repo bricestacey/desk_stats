@@ -7,7 +7,7 @@ Feature: Manage Categories
       | Name      |
       | Reference |
       | General   |
-    And   I am on the home page
+    And   I am on the admin page
     And   I follow "Categories"
 
   # Index

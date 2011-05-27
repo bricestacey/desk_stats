@@ -1,4 +1,4 @@
-= semantic_form_for @location do |f|
+= semantic_form_for @location, :url => (@location.new_record?) ? admin_locations_path : admin_location_path(@location) do |f|
   = f.inputs :name
   = f.buttons do
     = f.commit_button :label => (@location.new_record?) ? 'Add Location' : 'Update Location'

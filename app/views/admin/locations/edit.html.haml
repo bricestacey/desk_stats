@@ -1,0 +1,5 @@
+- @title = 'Edit Location'
+- @action_items = {'Cancel' => admin_location_path(@location)}
+- @breadcrumbs = {'Home' => root_path, 'Locations' => admin_locations_path, @location.name => admin_locations_path(@location)}
+
+= render :partial => 'form', :object => @location

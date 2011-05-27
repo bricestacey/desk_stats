@@ -63,3 +63,7 @@ Then /^I should( not)? see the following table rows( in any order)?:?$/ do |nega
   end.send(expectation, be_true)
 end
 
+Given /^I have selected the "([^"]*)" location$/ do |name|
+  Given "I am on the selector location page"
+  When  "I follow \"#{name}\""
+end

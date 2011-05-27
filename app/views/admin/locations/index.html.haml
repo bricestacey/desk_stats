@@ -1,5 +1,5 @@
 - @title = 'Locations'
-- @action_items = {'Add Location' => new_location_path}
+- @action_items = {'Add Location' => new_admin_location_path}
 - @breadcrumbs = {'Home' => root_path}
 
 %table
@@ -11,6 +11,6 @@
   %tbody
     - @locations.each do |location|
       %tr
-        %td= link_to location.name, location_path(location)
+        %td= link_to location.name, admin_location_path(location)
         %td= location.created_at.to_formatted_s(:long)
         %td= location.updated_at.to_formatted_s(:long)

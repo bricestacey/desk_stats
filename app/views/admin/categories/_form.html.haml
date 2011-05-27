@@ -1,4 +1,4 @@
-= semantic_form_for @category do |f|
+= semantic_form_for @category, :url => (@category.new_record?) ? admin_categories_path : admin_category_path(@category) do |f|
   = f.inputs :name
   = f.buttons do
     = f.commit_button :label => (@category.new_record?) ? 'Add Category' : 'Update Category'
