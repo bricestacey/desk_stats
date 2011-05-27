@@ -15,7 +15,7 @@ module NavigationHelpers
       '/admin'
 
     when /^the select location page$/
-      '/locations/select'
+      '/locations'
 
     # Add more mappings here.
     # Here is an example that pulls values out of the Regexp:

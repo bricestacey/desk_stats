@@ -18,7 +18,8 @@ Feature: Track activity at a Desk
     Then I should see "General"
     And  I should see "Reference"
 
-  # New
   Scenario: I should be able to track an activity by clicking a category
     When I follow "General"
-    Then I should see "You have successfully tracked an activity."
+    Then I should see "You successfully tracked a General activity."
+    When I follow "Reference"
+    Then I should see "You successfully tracked a Reference activity."

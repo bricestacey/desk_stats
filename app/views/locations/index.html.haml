@@ -1,0 +1,5 @@
+- @title = 'Locations'
+- @breadcrumbs = {'Home' => root_path}
+
+- @locations.each do |location|
+  = link_to location.name, select_location_path(location), :method => :post, :class => 'button'

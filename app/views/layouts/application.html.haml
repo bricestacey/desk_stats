@@ -14,26 +14,31 @@
     = javascript_include_tag :defaults
     = csrf_meta_tag
 
+    :css
+      a {
+        width: 100%;
+      }
+
+    :javascript
+      $(document).ready(function() {
+        if ($('.flash')) {
+          setTimeout(function() {
+            $('.flash').remove();
+          }, 5000);
+        }
+      });
   %body
-    #menu
-      .container
-        %h1= link_to 'Desk Stats', root_path
-        %ul.tabs
-          %li{:class => (request.path =~ /^\/admin\/locations/) ? 'active' : ''}= link_to 'Locations', admin_locations_path
-          %li{:class => (request.path =~ /^\/admin\/categories/) ? 'active' : ''}= link_to 'Categories', admin_categories_path
-
     #header
-      .container
-        .breadcrumbs
-          = breadcrumbs
-        .action_items.right
-          = action_items
-        %h2.page_title
-          = @title
+      Current Location: 
+      - if session[:location]
+        = session[:location].try(:name)
+      - else
+        None selected
 
-    .container
-      #flash
-        - flash.each do |key, value|
-          .flash{:class => key}= value
+      = link_to 'change', locations_path
 
-      = yield
+    #flash
+      - flash.each do |key, value|
+        .flash{:class => key}= value
+
+    = yield

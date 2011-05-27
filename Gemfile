@@ -10,6 +10,8 @@ gem 'haml'
 gem 'kaminari'
 gem 'formtastic'
 
+gem "jquery-rails"
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'sqlite3'

@@ -1,0 +1,2 @@
+- @categories.each do |category|
+  = link_to category.name, activities_path(:activity => {:category_id => category.id, :location_id => @location.id}), :method => :post, :class => 'button'
